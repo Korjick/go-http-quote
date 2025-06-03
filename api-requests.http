@@ -1,0 +1,138 @@
+### Тестирование API эндпоинтов для сервиса цитат
+
+### 1. Создать цитату - валидные данные
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Альберт Эйнштейн",
+  "quote": "Воображение важнее знания."
+}
+
+### 2. Создать цитату - другой автор
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Стив Джобс",
+  "quote": "Инновации отличают лидера от последователя."
+}
+
+### 3. Создать цитату - еще один автор
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Леонардо да Винчи",
+  "quote": "Простота — высшая степень изощренности."
+}
+
+### 4. Создать цитату - ошибка валидации (пустой автор)
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "",
+  "quote": "Цитата без автора"
+}
+
+### 5. Создать цитату - ошибка валидации (пустая цитата)
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Автор",
+  "quote": ""
+}
+
+### 6. Создать цитату - невалидный JSON
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Автор"
+  "quote": "Невалидный JSON - пропущена запятая"
+}
+
+### 7. Получить все цитаты
+GET http://localhost:8080/quotes
+
+### 8. Получить цитаты по автору (Einstein)
+GET http://localhost:8080/quotes?author=Альберт Эйнштейн
+
+### 9. Получить цитаты по автору (Jobs)
+GET http://localhost:8080/quotes?author=стив джобс
+
+### 10. Получить цитаты по автору (da Vinci)
+GET http://localhost:8080/quotes?author=леонардо ДА Винчи
+
+### 11. Получить цитаты по несуществующему автору
+GET http://localhost:8080/quotes?author=НесуществующийАвтор
+
+### 12. Получить случайную цитату
+GET http://localhost:8080/quotes/random
+
+### 13. Получить случайную цитату (повторный запрос)
+GET http://localhost:8080/quotes/random
+
+### 14. Удалить цитату по ID (замените 1 на реальный ID)
+DELETE http://localhost:8080/quotes/1
+
+### 15. Удалить цитату - несуществующий ID
+DELETE http://localhost:8080/quotes/999
+
+### 16. Удалить цитату - невалидный ID
+DELETE http://localhost:8080/quotes/invalid
+
+### 17. Тест неподдерживаемого метода PUT
+PUT http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Тест",
+  "quote": "PUT метод не поддерживается"
+}
+
+### 18. Тест неподдерживаемого метода PATCH
+PATCH http://localhost:8080/quotes/1
+Content-Type: application/json
+
+{
+  "author": "Обновленный автор"
+}
+
+### 19. Создать цитаты для демонстрации работы с множественными данными
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Платон",
+  "quote": "Мудрость начинается с удивления."
+}
+
+###
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Аристотель", 
+  "quote": "Мы есть то, что мы постоянно делаем."
+}
+
+###
+POST http://localhost:8080/quotes
+Content-Type: application/json
+
+{
+  "author": "Платон",
+  "quote": "Познание самого себя — начало всякой мудрости."
+}
+
+### 20. Проверить фильтрацию по автору Платон (после создания нескольких цитат)
+GET http://localhost:8080/quotes?author=Платон
+
+### 21. Финальная проверка всех цитат
+GET http://localhost:8080/quotes
+
+### 22. Получить последнюю случайную цитату
+GET http://localhost:8080/quotes/random
