@@ -1,3 +1,2 @@
-module github.com/Korjick/go-http-quote.git
-
+module github.com/Korjick/go-http-quote
 go 1.24.2
