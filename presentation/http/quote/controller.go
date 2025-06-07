@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"strings"
 
-	utils "github.com/Korjick/go-http-quote.git/presentation/http"
+	utils "github.com/Korjick/go-http-quote/presentation/http"
 
-	"github.com/Korjick/go-http-quote.git/application/service"
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
-	"github.com/Korjick/go-http-quote.git/presentation/http/quote/dto"
+	"github.com/Korjick/go-http-quote/application/service"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/presentation/http/quote/dto"
 )
 
 type Controller struct {

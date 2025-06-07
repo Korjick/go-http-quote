@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
 )
 
 type InMemoryQuoteRepository struct {

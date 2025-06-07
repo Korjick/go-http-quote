@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/Korjick/go-http-quote.git/domain/quote/entity"
+import "github.com/Korjick/go-http-quote/domain/quote/entity"
 
 type QuoteRepository interface {
 	Create(author, text string) (*entity.Quote, error)

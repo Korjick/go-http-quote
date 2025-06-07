@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
 )
 
 func TestNewQuoteValidInput(t *testing.T) {

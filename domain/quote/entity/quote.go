@@ -8,10 +8,10 @@ import (
 type QuoteID int64
 
 type Quote struct {
-	ID        QuoteID   `json:"id"`
-	Author    string    `json:"author"`
-	Text      string    `json:"quote"`
-	CreatedAt time.Time `json:"created_at"`
+	ID        QuoteID
+	Author    string
+	Text      string
+	CreatedAt time.Time
 }
 
 func NewQuote(id QuoteID, author, text string) (*Quote, error) {

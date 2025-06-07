@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Korjick/go-http-quote.git/application/service"
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
-	"github.com/Korjick/go-http-quote.git/infrastructure/repository/in_memory"
+	"github.com/Korjick/go-http-quote/application/service"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/infrastructure/repository/in_memory"
 )
 
 func TestQuoteService_CreateQuoteValidInput(t *testing.T) {

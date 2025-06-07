@@ -1,8 +1,8 @@
 package dto_test
 
 import (
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
-	"github.com/Korjick/go-http-quote.git/presentation/http/quote/dto"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/presentation/http/quote/dto"
 	"testing"
 )
 

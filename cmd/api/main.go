@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Korjick/go-http-quote.git/infrastructure/repository/in_memory"
+	"github.com/Korjick/go-http-quote/infrastructure/repository/in_memory"
 
-	"github.com/Korjick/go-http-quote.git/application/service"
-	"github.com/Korjick/go-http-quote.git/presentation/http/quote"
+	"github.com/Korjick/go-http-quote/application/service"
+	"github.com/Korjick/go-http-quote/presentation/http/quote"
 )
 
 func main() {

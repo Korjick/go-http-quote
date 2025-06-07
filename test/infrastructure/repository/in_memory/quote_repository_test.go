@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
-	"github.com/Korjick/go-http-quote.git/infrastructure/repository/in_memory"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/infrastructure/repository/in_memory"
 )
 
 func TestInMemoryQuoteRepository_Create(t *testing.T) {

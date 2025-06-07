@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
-	"github.com/Korjick/go-http-quote.git/domain/quote/repository"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/domain/quote/repository"
 )
 
 type QuoteService struct {

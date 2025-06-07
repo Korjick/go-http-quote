@@ -1,7 +1,7 @@
 package dto
 
 import (
-	"github.com/Korjick/go-http-quote.git/domain/quote/entity"
+	"github.com/Korjick/go-http-quote/domain/quote/entity"
 )
 
 func EntityToDTO(quote *entity.Quote) QuoteResponse {
