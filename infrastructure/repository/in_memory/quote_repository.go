@@ -1,6 +1,7 @@
 package in_memory
 
 import (
+	"github.com/Korjick/go-http-quote/domain/quote/repository"
 	"math/rand"
 	"strings"
 	"sync"
@@ -8,18 +9,18 @@ import (
 	"github.com/Korjick/go-http-quote/domain/quote/entity"
 )
 
-type InMemoryQuoteRepository struct {
+type inMemoryQuoteRepository struct {
 	quotes []*entity.Quote
 	mutex  sync.RWMutex
 }
 
-func NewInMemoryQuoteRepository() *InMemoryQuoteRepository {
-	return &InMemoryQuoteRepository{
+func NewInMemoryQuoteRepository() repository.QuoteRepository {
+	return &inMemoryQuoteRepository{
 		quotes: make([]*entity.Quote, 0),
 	}
 }
 
-func (r *InMemoryQuoteRepository) Create(author, text string) (*entity.Quote, error) {
+func (r *inMemoryQuoteRepository) Create(author, text string) (*entity.Quote, error) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
@@ -33,7 +34,7 @@ func (r *InMemoryQuoteRepository) Create(author, text string) (*entity.Quote, er
 	return quote, nil
 }
 
-func (r *InMemoryQuoteRepository) GetAll() ([]*entity.Quote, error) {
+func (r *inMemoryQuoteRepository) GetAll() ([]*entity.Quote, error) {
 	r.mutex.RLock()
 	defer r.mutex.RUnlock()
 
@@ -42,7 +43,7 @@ func (r *InMemoryQuoteRepository) GetAll() ([]*entity.Quote, error) {
 	return result, nil
 }
 
-func (r *InMemoryQuoteRepository) GetByAuthor(author string) ([]*entity.Quote, error) {
+func (r *inMemoryQuoteRepository) GetByAuthor(author string) ([]*entity.Quote, error) {
 	r.mutex.RLock()
 	defer r.mutex.RUnlock()
 
@@ -55,7 +56,7 @@ func (r *InMemoryQuoteRepository) GetByAuthor(author string) ([]*entity.Quote, e
 	return result, nil
 }
 
-func (r *InMemoryQuoteRepository) GetRandom() (*entity.Quote, error) {
+func (r *inMemoryQuoteRepository) GetRandom() (*entity.Quote, error) {
 	r.mutex.RLock()
 	defer r.mutex.RUnlock()
 
@@ -67,7 +68,7 @@ func (r *InMemoryQuoteRepository) GetRandom() (*entity.Quote, error) {
 	return r.quotes[index], nil
 }
 
-func (r *InMemoryQuoteRepository) Delete(id entity.QuoteID) error {
+func (r *inMemoryQuoteRepository) Delete(id entity.QuoteID) error {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
